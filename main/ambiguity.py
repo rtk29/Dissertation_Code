@@ -38,7 +38,7 @@ def merge_explanation_dicts(explanation_dict_list):
 
     return merged_dict
 
-
+# This code is referenced from github repository https://github.com/realChrisHahn2/nl2spec
 # Fill each list value in the dictionary with the string "None" followed by an 
 # incrementing number until the length of each list reaches at least n elements.
 # Ensure consistency in list lengths and providing default filler values when necessary.
@@ -62,7 +62,7 @@ def most_freq(parsed_lst):
         most_common = parsed_lst[0]
     return most_common
 
-
+# This code is referenced from github repository https://github.com/realChrisHahn2/nl2spec
 def count_occurences(parsed_lst, parsed_element):
     occurrences_count = 0
     
@@ -75,7 +75,7 @@ def count_occurences(parsed_lst, parsed_element):
 def calculate_certainty_score(parsed_lst, parsed_element, n):
     occurrences = count_occurences(parsed_lst, parsed_element)
     return occurrences / n
-
+# This code is referenced from github repository https://github.com/realChrisHahn2/nl2spec
 # Optimizes the input dictionary with certainty scores and reduce its contents
 def add_certainty_and_reduce(merged_dict, n):
     # Initializes an empty dictionary to hold the reduced and enhanced results
@@ -105,7 +105,7 @@ def add_certainty_and_reduce(merged_dict, n):
     return reduced_dict
 
 
-
+# This code is referenced from github repository https://github.com/realChrisHahn2/nl2spec
 def ambiguity_detection_translations(explain_dict_list, n, locked_translations):
     # Takes a list of dictionaries, merges them into a single dictionary with case-insensitive keys,
     # and returns the merged dictionary.
@@ -167,7 +167,7 @@ def add_locked_subtranslation(model_subtranslations, locked_subtranslations):
     return model_subtranslations
 
 
-
+# This code is referenced from github repository https://github.com/realChrisHahn2/nl2spec
 def ambiguity_final_translation(parsed_result_formulas, n):
     # Find out the most parsed LTL formula
     most_frequent_ltl = most_freq(parsed_result_formulas)
