@@ -13,3 +13,10 @@ This project aims at translating unstructured natural language requirements to L
 
 1. Access to Open AI API keys in mandatory. This should be purchased.  
 2. To access Google PaLM model, Vertex AI should be enabled.
+
+# Run from Client
+From the main folder:
+
+* Create the key file and paste your open ai or google project id into: keys/oai_key.txt or keys/google_project_id.txt
+* python3 -m flask --app client.py run
+* Then open web-based tool at http://127.0.0.1:5000
