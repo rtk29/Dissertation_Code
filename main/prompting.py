@@ -89,7 +89,7 @@ def generate_intermediate_output(intermediate_translation):
     return intermediate_output
 
 
-
+# This code is referenced from github repository https://github.com/realChrisHahn2/nl2spec
 def prompt(args):
     # Takes the natural language input from the command line argument. For example
     # "The brake should not be engaged for more than a certain duration without driver intervention."
@@ -118,7 +118,7 @@ def prompt(args):
 
     return final_prompt
 
-
+# This code is referenced from github repository https://github.com/realChrisHahn2/nl2spec
 def extract_subinfo(options, args, n):
     parsed_result_formulas = parse_LTL_formulas(options)
 
