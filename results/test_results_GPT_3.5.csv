@@ -1,0 +1,54 @@
+﻿NL,LTL,GPT Initial ,Model's Ambiguity in Semantics Understanding,Meaningful Imperfect Translation,Model's inability to capture intended functional meaning,"Number of subtranslation edits (Add, Modify, Delete)"
+The vehicle should always brake when an obstacle is detected within a critical distance.,G (ObstacleDetected -> Brake),TRANSLATED,,,,TRANSLATED
+"If the driver presses the brake pedal, the vehicle must brake.",G (BrakePedalPressed -> Brake),TRANSLATED,,,,TRANSLATED
+The vehicle should not brake if no obstacle is detected.,G (~ObstacleDetected -> ~Brake),TRANSLATED,,,,TRANSLATED
+"If the vehicle is stationary, the brake should be engaged.",G (VehicleStationary -> BrakeEngaged),,,,YES,
+The vehicle should release the brake only when the driver accelerates and no obstacle is detected.,G (Accelerate & ~ObstacleDetected -> Brake),TRANSLATED,,,,TRANSLATED
+"If the vehicle's speed is above a safe threshold, the brake should be engaged when an obstacle is detected.",G (SpeedAboveThreshold & ObstacleDetected -> Brake),,YES,,,
+The vehicle should not brake abruptly unless an obstacle is detected within a very close range.,G (ObstacleVeryClose -> AbruptBrake),,,YES,,
+The vehicle should provide a warning before engaging the brake for safety reasons.,G (BrakeForSafety -> X Warning),,YES,,,2 (Subtranslation edit)- Translated
+The brake should not be engaged for more than a certain duration without driver intervention.,G (Brake -> F_{\leq duration} DriverIntervention),,,,,
+"If the brake system detects a malfunction, it should alert the driver.",G (BrakeMalfunction -> AlertDriver),TRANSLATED,,,,TRANSLATED
+The vehicle should maintain the set speed when cruise control is activated.,G (CruiseControlActivated -> MaintainSetSpeed),TRANSLATED,,,,TRANSLATED
+"If the driver presses the brake pedal, cruise control should be deactivated.",G (BrakePedalPressed -> ~ CruiseControlActivated),TRANSLATED,,,,TRANSLATED
+The driver should be able to increase the set speed using the cruise control interface.,G (IncreaseSpeedCommand -> X (SetSpeed = PreviousSetSpeed + IncrementValue)),,,,YES,
+The driver should be able to decrease the set speed using the cruise control interface.,G (DecreaseSpeedCommand -> X (SetSpeed = PreviousSetSpeed - IncrementValue)),,,,YES,
+"If an obstacle is detected within a critical distance, cruise control should be deactivated.",G (ObstacleDetected -> ~ CruiseControlActivated),TRANSLATED,,,,TRANSLATED
+The vehicle should not activate cruise control if the speed is below a minimum threshold.,G (SpeedBelowThreshold -> ~ CruiseControlActivated),TRANSLATED,,,,TRANSLATED
+"If the vehicle's speed drops significantly below the set speed (e.g., due to a steep incline), cruise control should try to accelerate to reach the set speed.",G (SpeedSignificantlyBelowSetSpeed & CruiseControlActivated -> Accelerate),,YES,,,
+The driver should be alerted if cruise control fails to maintain the set speed for an extended period.,G (CannotMaintainSetSpeed -> F_{\leq duration} AlertDriver),,YES,,,
+Cruise control should not be activated when the vehicle's traction control system detects slippery conditions.,G (TractionControlAlert -> ~ CruiseControlActivated),,,,YES,1 (Subtranslation edit)- Translated
+"If the driver manually accelerates, the set speed for cruise control should adjust to the new speed once the accelerator is released.",G (DriverAccelerates -> X (SetSpeed = CurrentSpeed  when  ~ AcceleratorPressed)),,YES,,,
+The LKA system should activate when the vehicle speed is above a certain threshold and the system is turned on.,G (SpeedAboveThreshold & LKASwitchedOn -> LKAActivated),,,,YES,1 (Subtranslation edit)- Translated
+"If the vehicle starts to drift out of its lane without a turn signal activated, the LKA system should make corrective steering adjustments.",G (DriftingOutOfLane & ~ TurnSignalActivated -> CorrectiveSteering),,YES,,,2 (Subtranslation edit)- Translated
+The LKA system should not activate corrective steering if the turn signal is on.,G (TurnSignalActivated -> ~ CorrectiveSteering),,,,YES,1 (Subtranslation edit)- Translated
+"If the system cannot detect clear lane markings, it should alert the driver that LKA is not available.",G (~ LaneMarkingsDetected -> AlertLKAUnavailable),,,,YES,2 (Subtranslation edit)- Translated
+The driver should be able to override the LKA system by steering manually.,G (ManualSteering -> ~ CorrectiveSteering),,YES,,,
+"If the LKA system detects that the driver's hands are off the steering wheel for an extended period, it should alert the driver.",G (HandsOffSteering -> F_{\leq duration} AlertDriverHandsOff),,,,,
+The LKA system should deactivate when the vehicle speed drops below a certain threshold.,G (SpeedBelowThreshold -> ~ LKAActivated),,,YES,,1 (Subtranslation edit)- Translated
+"The LKA system should provide feedback (e.g., vibration or sound) to the driver when making corrective steering adjustments.",G (CorrectiveSteering -> ProvideFeedback),,,YES,,1 (Subtranslation edit)- Translated
+"If the LKA system malfunctions, it should alert the driver and deactivate.",G (LKAMalfunction -> AlertDriver & ~ LKAActivated),TRANSLATED,,,,TRANSLATED
+"The LKA system should not activate if the road conditions are detected to be poor (e.g., heavy rain, snow).",G (PoorRoadConditions -> ~ LKAActivated),TRANSLATED,,,,TRANSLATED
+The ACC system should activate when the driver sets a desired speed and the system is turned on.,G (SetDesiredSpeed & ACCSwitchedOn -> ACCActivated),,,,YES,1 (Subtranslation edit)- Translated
+"If a slower-moving vehicle is detected in the same lane, the ACC should adjust the speed to maintain a safe following distance.",G (SlowerVehicleDetected -> AdjustSpeed),TRANSLATED,,,,TRANSLATED
+"If the vehicle ahead increases its speed or changes lanes, the ACC should accelerate to the previously set speed.",G (VehicleAheadAccelerates | VehicleAheadChangesLane -> ReturnToSetSpeed),,,,YES,2 (Subtranslation edit)- Translated
+The driver should be able to override the ACC by manually accelerating or braking.,G (ManualAcceleration | ManualBraking -> ~ AdjustSpeed),,YES,,,
+"If a stationary object is detected in the vehicle's path, the ACC should alert the driver and prepare for emergency braking.",G (StationaryObjectDetected -> AlertDriver & PrepareEmergencyBraking),TRANSLATED,,,,TRANSLATED
+The ACC system should deactivate when the vehicle speed drops below a certain threshold.,G (SpeedBelowThreshold -> ~ ACCActivated),,,YES,,1 (Subtranslation edit)- Translated
+"The ACC system should provide feedback to the driver when adjusting the speed (e.g., visual or auditory signals).",G (AdjustSpeed -> ProvideFeedback),TRANSLATED,,,,TRANSLATED
+"If the ACC system malfunctions, it should alert the driver and deactivate.",G (ACCMalfunction -> AlertDriver & ~ ACCActivated),TRANSLATED,,,,TRANSLATED
+"The ACC system should not activate if the road conditions are detected to be poor (e.g., heavy rain, snow).",G (PoorRoadConditions -> ~ ACCActivated),TRANSLATED,,,,TRANSLATED
+The LDW system should activate when the vehicle speed is above a certain threshold and the system is turned on.,G (SpeedAboveThreshold & LDWSwitchedOn -> LDWActivated),,,,YES,2 (Subtranslation edit)- Translated
+"If the vehicle starts to drift out of its lane without a turn signal activated, the LDW system should alert the driver.",G (DriftingOutOfLane & ~ TurnSignalActivated -> AlertDriver),,YES,,,"1 Translation added, 1 subtranslation edit"
+The LDW system should not alert the driver if the turn signal is on.,G (TurnSignalActivated -> ~ AlertDriver),TRANSLATED,,,,TRANSLATED
+"If the system cannot detect clear lane markings, it should not activate the LDW.",G (~ LaneMarkingsDetected -> ~ LDWActivated),,,YES,,1 (Subtranslation edit)- Translated
+The driver should be able to temporarily override the LDW system by steering manually.,G (ManualSteering -> ~ AlertDriver),,,,YES,1 (Subtranslation edit)- Translated
+"If the LDW system detects that the driver's hands are off the steering wheel, it should provide an additional alert.",G (HandsOffSteering -> AlertDriverHandsOff),,,YES,,2 (Subtranslation edit)- Translated
+The LDW system should deactivate when the vehicle speed drops below a certain threshold.,G (SpeedBelowThreshold -> ~ LDWActivated),,,,YES,1 (Subtranslation edit)- Translated
+The LDW system should provide visual and/or auditory alerts to the driver when activated.,G (LDWActivated -> ProvideVisualOrAuditoryAlert),,,,YES,1 (Subtranslation edit)- Translated
+"If the LDW system malfunctions, it should alert the driver and deactivate.",G (LDWMalfunction -> AlertDriver & ~ LDWActivated),TRANSLATED,,,,TRANSLATED
+"The LDW system should not activate if the road conditions are detected to be poor (e.g., heavy rain, snow).",G (PoorRoadConditions -> ~ LDWActivated),TRANSLATED,,,,TRANSLATED
+The BSD system should activate when the vehicle is started and remain active while the vehicle is in motion.,G (VehicleStarted -> BSDActivated),,YES, ,,
+The Parking Assistance system should deactivate once the vehicle is parked or when shifted to drive gear.,G (VehicleParked | VehicleInDrive -> ~ ParkingAssistanceActivated),,,,YES,
+"If the driver activates the turn signal indicating a lane change in the direction of the detected vehicle in the blind spot, the system should provide an additional auditory alert.",G (VehicleInBlindSpot & TurnSignalActivated -> AuditoryAlert),,YES,,,1 sub tranlsation added - Translated
+"The BSD system should not provide alerts for stationary objects, such as road signs or parked cars.",G (StationaryObjectDetected -> ~ VisualAlertInSideMirror & ~ AuditoryAlert),,YES,,,
