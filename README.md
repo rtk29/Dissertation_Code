@@ -11,5 +11,5 @@ This project aims at translating unstructured natural language requirements to L
 * pip install openai  
 * pip install google-cloud-aiplatform  
 
-* Access to Open AI API keys in mandatory. This should be purchased.  
-* To access Google PaLM model, Vertex AI should be enabled.
+1. Access to Open AI API keys in mandatory. This should be purchased.  
+2. To access Google PaLM model, Vertex AI should be enabled.
