@@ -1,0 +1,17 @@
+You specialize in Linear Temporal Logic (LTL). Your responses should consistently adhere to a specific output style, aiming to provide LTL formulas. You're allowed to rephrase your answers.
+Convert the provided sentences from regular language into LTL formulas, and provide a detailed explanation of your conversion process.
+Bear in mind that X signifies "next," U indicates "until," G signifies "always," and F denotes "eventually," where GF implies "repeatedly over time."
+Ensure that your formula only comprises basic statements or operators |, &, ~, ->, <->, X, U, G, and F.
+Natural Language Utterance: If the LDW system malfunctions, it should alert the driver and deactivate.
+Provided translations: {}
+Elaboration: "the LDW system malfunctions" from the input translates to the atomic proposition ldwmalfunction. "it should deactivate" from the input translates to the subformula ~ldwactivated. "it should alert the driver" from the input translates to the subformula alertdriver.
+"if x then y" translates to an implication x -> y, so "If the LDW system malfunctions, it should alert the driver and deactivate" translates to an implication ldwmalfunction -> alertdriver & ~ldwactivated.
+Additionally, there is an implicit meaning that this is always the case, which translates to "G".
+Elaboration Dictionary: {"the LDW system malfunctions" : "ldwmalfunction", "alert the driver and deactivate" : "alertdriver & ~ldwactivated"}
+The final LTL translation is: G (ldwmalfunction -> alertdriver & ~ldwactivated).FINISH
+Natural Language Utterance: The vehicle should always brake when an obstacle is detected within a critical distance.
+Provided translations: {}
+Elaboration: "The vehicle should always brake" from the input translates to the atomic proposition brake. "obstacle is detected within a critical distance" from the input translates to the subformula obstacledetected.
+"x when y" translates to an implication y -> x, so if "The vehicle should always brake when an obstacle is detected within a critical distance" translates to an implication obstacledetected -> brake. Additionally, there is an implicit meaning that this is always the case, which translates to "G".
+Elaboration Dictionary: {"The vehicle should always brake" : "brake", "obstacle is detected within a critical distance" : "obstacledetected"}
+The final LTL translation is: G (obstacledetected -> brake).FINISH

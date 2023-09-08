@@ -1,0 +1,31 @@
+You specialize in Linear Temporal Logic (LTL). Your responses should consistently adhere to a specific output style, aiming to provide LTL formulas. You're allowed to rephrase your answers.
+Convert the provided sentences from regular language into LTL formulas, and provide a detailed explanation of your conversion process.
+Bear in mind that X signifies "next," U indicates "until," G signifies "always," and F denotes "eventually," where GF implies "repeatedly over time."
+Ensure that your formula only comprises basic statements or operators |, &, ~, ->, <->, X, U, G, and F.
+Natural Language Utterance: If the LDW system malfunctions, it should alert the driver and deactivate.
+Provided translations: {}
+Elaboration: "the LDW system malfunctions" from the input translates to the atomic proposition LDWMalfunction. "it should deactivate" from the input translates to the subformula ~LDWActivated. "it should alert the driver" from the input translates to the subformula AlertDriver.
+"if x then y" translates to an implication x -> y, so "If the LDW system malfunctions, it should alert the driver and deactivate" translates to an implication LDWMalfunction -> AlertDriver & ~LDWActivated.
+Additionally, there is an implicit meaning that this is always the case, which translates to "G".
+Elaboration Dictionary: {"the LDW system malfunctions" : "LDWMalfunction", "alert the driver and deactivate" : "AlertDriver & ~LDWActivated"}
+The final LTL translation is: G (LDWMalfunction -> AlertDriver & ~LDWActivated).FINISH
+Natural Language Utterance: The vehicle should always brake when an obstacle is detected within a critical distance.
+Provided translations: {}
+Elaboration: "The vehicle should always brake" from the input translates to the atomic proposition Brake. "obstacle is detected within a critical distance" from the input translates to the subformula ObstacleDetected.
+"x when y" translates to an implication y -> x, so if "The vehicle should always brake when an obstacle is detected within a critical distance" translates to an implication ObstacleDetected -> Brake. Additionally, there is an implicit meaning that this is always the case, which translates to "G".
+Elaboration Dictionary: {"The vehicle should always brake" : "Brake", "obstacle is detected within a critical distance" : "ObstacleDetected"}
+The final LTL translation is: G (ObstacleDetected -> Brake).FINISH
+Natural Language Utterance: The vehicle should release the brake only when the driver accelerates and no obstacle is detected.
+Provided translations: {}
+Elaboration: "The vehicle should release the brake" from the input translates to the atomic proposition Brake. "no obstacle is detected" from the input translates to the subformula ~ObstacleDetected. "driver accelerates" from the input translates to the subformula Accelerate
+"x when (y and z)" translates to an implication (y & z) -> x, so if "The vehicle should release the brake only when the driver accelerates and no obstacle is detected" translates to an implication Accelerate & ~ObstacleDetected -> Brake. Additionally, there is an implicit meaning that this is always the case, which translates to "G".
+Elaboration Dictionary: {"The vehicle should release the brake" : "Brake", "no obstacle is detected" : "~ObstacleDetected"}
+The final LTL translation is: G (Accelerate & ~ObstacleDetected -> Brake).FINISH
+Natural Language Utterance: The ACC system should provide feedback to the driver when adjusting the speed.
+Provided translations: {}
+Elaboration: "The ACC system should provide feedback" from the input translates to the atomic proposition ProvideFeedback. "adjusting the speed" from the input translates to the subformula AdjustSpeed.
+"x when y" translates to an implication y -> x, so if "The ACC system should provide feedback to the driver when adjusting the speed" translates to an implication AdjustSpeed -> ProvideFeedback. Additionally, there is an implicit meaning that this is always the case, which translates to "G".
+Elaboration Dictionary: {"The ACC system should provide feedback" : "ProvideFeedback", "adjusting the speed" : "AdjustSpeed"}
+The final LTL translation is: G (AdjustSpeed -> Feedback).FINISH
+
+
