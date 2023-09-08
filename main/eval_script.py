@@ -95,7 +95,7 @@ def parse_args():
     args = parser.parse_args()
     return args
 
-
+# This code is referenced from github repository https://github.com/realChrisHahn2/nl2spec
 def get_dataset(datafile):
     if datafile == "":        
         f = open("../datasets/requirements_LTL_dataset.txt")
@@ -130,7 +130,7 @@ def get_next_provided_translations(server_res):
 def get_final_translation(server_res):
     return str(server_res[0][0]).strip("\n")
 
-
+# This code is referenced from github repository https://github.com/realChrisHahn2/nl2spec
 def call_server(
     nl,
     model,
