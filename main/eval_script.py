@@ -98,7 +98,7 @@ def parse_args():
 # This code is referenced from github repository https://github.com/realChrisHahn2/nl2spec
 def get_dataset(datafile):
     if datafile == "":        
-        f = open("../datasets/requirements_LTL_dataset.txt")
+        f = open("../example_requirements/requirements_LTL_dataset.txt")
         f.readline()
         NL_list = []
         label_list = []
