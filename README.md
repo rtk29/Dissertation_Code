@@ -1,5 +1,5 @@
 # Translating Natural Language requirements to Linear Temporal Logic
-This project aims at translating unstructured natural language requirements to Linear Temporal Logic using Large Language Models with a well-designed few shot prompt. For the implementaion of client design and its lay out, the server design the following code has been utilised/referenced. The copyright information along with github link is cited in each of the code files that has referenced this source.  
+This project aims at translating unstructured natural language requirements to Linear Temporal Logic using Large Language Models with a well-designed few shot prompt. For the implementation of client design and its lay out, the server design, the following guthub source has been utilised/referenced. The copyright information along with github link is cited in each of the code files that has referenced this source.  
 [nl2spec](https://github.com/realChrisHahn2/nl2spec/tree/main)
 # Dependencies
 * [Flask](https://flask.palletsprojects.com/en/2.2.x/)  
