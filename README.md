@@ -22,6 +22,6 @@ From the main folder:
 * Then open web-based tool at http://127.0.0.1:5000  
   
 # Run from Server  
-Go to main folder andon the command line interface run the below command  
+* Go to main folder andon the command line interface run the below command:  
 python nl2ltl.py --help  
-Eg:- python3 nl2ltl.py --model gpt-3.5-turbo --keyfile PATH/TO/YOUR/OPENAIKEY --nl "The vehicle should always brake when an obstacle is detected within a critical distance." --num_tries 3 --temperature 0.2 --prompt basic  
+* Eg:- python3 nl2ltl.py --model gpt-3.5-turbo --keyfile PATH/TO/YOUR/OPENAIKEY --nl "The vehicle should always brake when an obstacle is detected within a critical distance." --num_tries 3 --temperature 0.2 --prompt basic  
