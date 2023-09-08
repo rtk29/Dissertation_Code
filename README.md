@@ -1,1 +1,1 @@
-# Translating Natural Langugae requirements to Linear Temporal Logic
+# Translating Natural Language requirements to Linear Temporal Logic
