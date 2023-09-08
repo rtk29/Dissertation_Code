@@ -1,7 +1,7 @@
 # Translating Natural Language requirements to Linear Temporal Logic
 This project aims at translating unstructured natural language requirements to Linear Temporal Logic using Large Language Models with a well-designed few shot prompt. 
 # Dependencies
-* Flask - https://flask.palletsprojects.com/en/2.2.x/  
+* [Flask](https://flask.palletsprojects.com/en/2.2.x/)
 * LTLf2DFA - https://github.com/whitemech/LTLf2DFA  
 * Open AI - https://openai.com/blog/openai-api  
 * Google Cloud AI Platform - https://cloud.google.com/python/docs/reference/aiplatform/latest/index.html  
