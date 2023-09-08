@@ -24,4 +24,4 @@ From the main folder:
 # Run from Server  
 * Go to main folder and on the command line interface run the command __python nl2ltl.py --help__  
 * __GPT 3.5 Turbo__: python3 nl2ltl.py --model gpt-3.5-turbo --keyfile PATH/TO/YOUR/OPENAIKEY --nl "The vehicle should always brake when an obstacle is detected within a critical distance." --num_tries 3 --temperature 0.2 --prompt basic  
-* __Google PaLM__: python3 nl2ltl.py --model text-bison@001 --keyfile PATH/TO/YOUR/OPENAIKEY --nl "The vehicle should always brake when an obstacle is detected within a critical distance." --num_tries 3 --temperature 0.2 --prompt basic  
+* __Google PaLM__: python3 nl2ltl.py --model text-bison@001 --keyfile PATH/TO/YOUR/GOOGLE_PROJECT-ID --nl "The vehicle should always brake when an obstacle is detected within a critical distance." --num_tries 3 --temperature 0.2 --prompt basic  
