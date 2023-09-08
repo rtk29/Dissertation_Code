@@ -16,7 +16,6 @@ This project aims at translating unstructured natural language requirements to L
 
 # Run from Client
 From the main folder:  
-
 * In the keys folder within the main folder, paste your open ai or google project id into: keys/oai_key.txt or keys/google_project_id.txt respectively  
 * python3 -m flask --app client.py run  
 * Then open web-based tool at http://127.0.0.1:5000  
