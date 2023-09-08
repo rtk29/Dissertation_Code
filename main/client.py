@@ -31,6 +31,7 @@ import json
 # Initializes a Flask web application
 app = Flask(__name__, template_folder="../templates", static_folder="../static")
 
+# This code is referenced from github repository https://github.com/realChrisHahn2/nl2spec
 # Defines the route for the home page of the web application. It handles both GET and POST requests
 @app.route("/", methods=["POST", "GET"])
 @app.route("/home/", methods=["POST", "GET"])
@@ -102,6 +103,7 @@ def home():
         input="The vehicle should always brake when an obstacle is detected within a critical distance.",
     )
 
+# This code is referenced from github repository https://github.com/realChrisHahn2/nl2spec
 # Retrieve data from a CSV file, convert it into JSON format, and provide it as output
 def load_sample_requirements():
 
@@ -112,7 +114,7 @@ def load_sample_requirements():
     
     return json_data
 
-
+# This code is referenced from github repository https://github.com/realChrisHahn2/nl2spec
 def subtranslation_gen(form_data):
     # number of fixed inputs: nl, prompt, model, temperature, runs = 5
     print(f"The key values of form data are {form_data.keys()}")
