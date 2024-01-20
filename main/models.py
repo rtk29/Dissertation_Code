@@ -47,23 +47,24 @@ def gpt_35_turbo(args):
     # Specify the number of times the model attempts a translation.
     n = 3 if args.num_tries == "" else min(int(args.num_tries), 5)
 
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",                        # Specifies the model to be used
-        messages=[{"role": "user", "content": prompting.prompt(args)}],    # Prime the model with a few-shot prompt
-        n=n,                                          # Represents the number of responses to generate.
-        temperature=args.temperature,                 # Sets the temperature parameter for controlling the randomness of the response. 
-        stop="FINISH",                                # Stops generating text once it encounters the string "FINISH"
-    )
-    choices = []
+    # response = openai.ChatCompletion.create(
+    #     model="gpt-3.5-turbo",                        # Specifies the model to be used
+    #     messages=[{"role": "user", "content": prompting.prompt(args)}],    # Prime the model with a few-shot prompt
+    #     n=n,                                          # Represents the number of responses to generate.
+    #     temperature=args.temperature,                 # Sets the temperature parameter for controlling the randomness of the response. 
+    #     stop="FINISH",                                # Stops generating text once it encounters the string "FINISH"
+    # )
+    # choices = []
     
-    for i in range(0, n):
-        output = response["choices"][i]["message"]["content"]
-        print(f"OUTPUT {i}")
-        print(output)
-        choices.append(output)
-        print()
+    # for i in range(0, n):
+    #     output = response["choices"][i]["message"]["content"]
+    #     print(f"OUTPUT {i}")
+    #     print(output)
+    #     choices.append(output)
+    #     print()
         #print()print(f" The choices list is {choices}")
-    return prompting.extract_subinfo(choices, args, n)
+    #return prompting.extract_subinfo(choices, args, n)
+    return [[0,0],[1,1]]
 
 
 def code_davinci_edit_001(args):
