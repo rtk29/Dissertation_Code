@@ -27,6 +27,13 @@ import server
 import pandas as pd
 import os
 import json
+from dotenv import load_dotenv
+
+# Load the environment variable from .env file
+load_dotenv()
+
+# Fetch the API key from environment variables
+api_key = os.getenv("OPENAI_SECRET_KEY")
 
 # Initializes a Flask web application
 app = Flask(__name__, template_folder="../templates", static_folder="../static")
@@ -53,12 +60,13 @@ def home():
             form_data["models"] == "gpt-3.5-turbo"
             or form_data["models"] == "code-davinci-edit-001"
         ):
-            keyfile = os.path.join("keys", "oai_key.txt")
+            #keyfile = os.path.join("keys", "oai_key.txt")
+            keyfile = api_key
 
         if form_data["models"] == "text-bison@001":
             keyfile = os.path.join("keys", "google_project_id.txt")
         ns = Namespace(
-            keyfile=keyfile,
+            keyfile=api_key,
             maxtokens=150,
             model=form_data["models"],
             nl=input,
