@@ -55,6 +55,7 @@ def home():
         temperature = float(form_data["temperature"]) * 0.1
         ground_truth = form_data["ground_truth"] if "ground_truth" in form_data else ""
         
+        # If the model is davinci or GTP 3.5
         keyfile = ""
         if (
             form_data["models"] == "gpt-3.5-turbo"
