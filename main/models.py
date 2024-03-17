@@ -46,7 +46,7 @@ def gpt_35_turbo(args):
     # Read the open AI key from the text file in keys folder and store it.
     # keyfile = args.keyfile if args.keyfile != "" else os.path.join(args.keydir, "oai_key.txt")
     # with open(keyfile, 'r') as file:
-    #     key = file.readline().rstrip("\n")
+    #    key = file.readline().rstrip("\n")
 
     # if not key:
     #     raise Exception("No key provided in the file")    
