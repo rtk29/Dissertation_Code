@@ -29,11 +29,11 @@ import os
 import json
 from dotenv import load_dotenv
 
-# Load the environment variable from .env file
-load_dotenv()
+# # Load the environment variable from .env file
+# load_dotenv()
 
 # Fetch the API key from environment variables
-api_key = os.getenv("OPENAI_SECRET_KEY")
+api_key = os.environ['OPENAI_SECRET_KEY']
 
 # Initializes a Flask web application
 app = Flask(__name__, template_folder="../templates", static_folder="../static")
@@ -62,7 +62,6 @@ def home():
         ):
             #keyfile = os.path.join("keys", "oai_key.txt")
             keyfile = api_key
-        print(f"The open ai key value is {keyfile}")
 
         if form_data["models"] == "text-bison@001":
             keyfile = os.path.join("keys", "google_project_id.txt")

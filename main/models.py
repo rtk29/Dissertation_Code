@@ -32,13 +32,13 @@ from vertexai.preview.language_models import TextGenerationModel
 
 import prompting
 
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-# Load the environment variable from .env file
-load_dotenv()
+# # Load the environment variable from .env file
+# load_dotenv()
 
 # Fetch the API key from environment variables
-api_key = os.getenv("OPENAI_SECRET_KEY")
+api_key = os.enviorn['OPENAI_SECRET_KEY']
 
 
 def gpt_35_turbo(args):
@@ -48,8 +48,8 @@ def gpt_35_turbo(args):
     # with open(keyfile, 'r') as file:
     #    key = file.readline().rstrip("\n")
 
-    # if not key:
-    #     raise Exception("No key provided in the file")    
+    if not openai.api_key:
+        raise Exception("No key provided in the file")    
     openai.api_key = api_key
 
     # Specify the number of times the model attempts a translation.
@@ -78,12 +78,12 @@ def gpt_35_turbo(args):
 def code_davinci_edit_001(args):
     
     # Read the open AI key from the text file in keys folder and store it.
-    keyfile = args.keyfile if args.keyfile != "" else os.path.join(args.keydir, "oai_key.txt")
-    with open(keyfile, 'r') as file:
-        key = file.readline().rstrip("\n")
-    if not key:
+    # keyfile = args.keyfile if args.keyfile != "" else os.path.join(args.keydir, "oai_key.txt")
+    # with open(keyfile, 'r') as file:
+    #     key = file.readline().rstrip("\n")
+    if not openai.api_key:
         raise Exception("No key provided in the file")    
-    openai.api_key = key
+    openai.api_key = api_key
 
     # Specify the number of times the model attempts a translation.
     n = 3 if args.num_tries == "" else min(int(args.num_tries), 5)
