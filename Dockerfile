@@ -16,5 +16,5 @@ COPY . /application
 # Expose the port on which the application will run
 EXPOSE 5000
 
-# Run the FASTAPI application using the uvicorn server.
+# Run the flask application using the below commands.
 CMD ["python", "-m", "flask", "--app", "client.py", "run", "port", "5050"]
