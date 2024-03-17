@@ -62,11 +62,12 @@ def home():
         ):
             #keyfile = os.path.join("keys", "oai_key.txt")
             keyfile = api_key
+        print(f"The open ai key value is {keyfile}")
 
         if form_data["models"] == "text-bison@001":
             keyfile = os.path.join("keys", "google_project_id.txt")
         ns = Namespace(
-            keyfile=api_key,
+            keyfile=keyfile,
             maxtokens=150,
             model=form_data["models"],
             nl=input,
