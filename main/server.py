@@ -27,13 +27,16 @@ import models
 
 def call_model(args):
     model = args.model
-
+    
+    # Select Bison model
     if model == "text-bison@001":
         return models.text_bison_001(args)
     
+    # Select Davinci model
     if model == "code-davinci-edit-001":
         return models.code_davinci_edit_001(args)
     
+    # Select GPT model
     if model == "gpt-3.5-turbo":
         return models.gpt_35_turbo(args)
     
