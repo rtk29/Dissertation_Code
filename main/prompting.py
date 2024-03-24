@@ -94,7 +94,8 @@ def prompt(args):
     # Takes the natural language input from the command line argument. For example
     # "The brake should not be engaged for more than a certain duration without driver intervention."
     input = args.nl
-    prompt_dir = os.path.join("..", "prompts")   
+    prompt_dir = "prompts"
+    #prompt_dir = os.path.join("..", "prompts")
 
     # Maps the specifics prompt options with their filenames
     prompt_mapping = {
