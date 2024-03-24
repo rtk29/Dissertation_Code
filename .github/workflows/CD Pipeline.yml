@@ -17,5 +17,7 @@ jobs:
       run: sudo docker pull rkundula/nl2ltl:latest
     - name: Delete old container if it exists
       run: sudo docker rm -f nl2ltl_container || true
+      env:
+        API_KEY: ${{ secrets.OPENAI_SECRET_KEY }}
     - name: Run a new container
       run: sudo docker run -d -p 5000:5050 -e API_KEY --name nl2ltl_container rkundula/nl2ltl:latest
