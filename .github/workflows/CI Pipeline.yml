@@ -17,6 +17,8 @@ jobs:
         DOCKER_PASS: ${{secrets.DOCKER_PASS}}
       run: docker login -u rkundula -p $DOCKER_PASS
     - name: Build a docker image
+      env:
+        API_KEY: ${{secrets.OPENAI_SECRET_KEY}}
       run: docker build -t nl2ltl .
     - name: Tag a docker image
       run: docker tag nl2ltl:latest rkundula/nl2ltl:latest
