@@ -17,4 +17,4 @@ COPY . /application
 EXPOSE 5000
 
 # Run the flask application using the below commands.
-CMD ["python", "-m", "flask", "--app", "client.py", "run", "port", "5050"]
+CMD ["python3", "-m", "flask", "--app", "main/client.py", "run", "--port", "5050", "--host", "0.0.0.0"]

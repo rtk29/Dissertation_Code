@@ -30,10 +30,11 @@ import json
 from dotenv import load_dotenv
 
 # # Load the environment variable from .env file
-# load_dotenv()
+load_dotenv()
 
 # Fetch the API key from environment variables
-api_key = os.environ['OPENAI_SECRET_KEY']
+#api_key = os.environ['OPENAI_SECRET_KEY']
+api_key = os.getenv("OPENAI_SECRET_KEY")
 
 # Initializes a Flask web application
 app = Flask(__name__, template_folder="../templates", static_folder="../static")
@@ -116,7 +117,7 @@ def home():
 # Retrieve data from a CSV file, convert it into JSON format, and provide it as output
 def load_sample_requirements():
 
-    csv_file_path = os.path.join("..", "examples.csv")
+    csv_file_path = "examples.csv"
     data_frame = pd.read_csv(csv_file_path, delimiter=";")
     examples_list = data_frame.values.tolist()   
     json_data = json.dumps(examples_list)

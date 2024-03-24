@@ -28,3 +28,4 @@ ltlf2dfa==1.0.2
 pandas
 tabulate
 google-cloud-aiplatform>= 1.25.0
+python-dotnev==1.0.1
