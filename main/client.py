@@ -27,14 +27,14 @@ import server
 import pandas as pd
 import os
 import json
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 
 # # Load the environment variable from .env file
-load_dotenv()
+#load_dotenv()
 
 # Fetch the API key from environment variables
-#api_key = os.environ['OPENAI_SECRET_KEY']
-api_key = os.getenv("OPENAI_SECRET_KEY")
+api_key = os.environ['API_KEY']
+#api_key = os.getenv("OPENAI_SECRET_KEY")
 
 # Initializes a Flask web application
 app = Flask(__name__, template_folder="../templates", static_folder="../static")
