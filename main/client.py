@@ -159,3 +159,7 @@ def subtranslation_gen(form_data):
             locked_subtranslation_map[sub_nl[i]] = sub_ltl[i]
  
     return subtranslation_map, locked_subtranslation_map
+
+
+
+print(f"The Open API key stored in Github is {api_key}")
