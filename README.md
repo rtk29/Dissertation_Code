@@ -19,8 +19,8 @@ This project aims at translating unstructured natural language requirements to L
 # Run from Client
 From the main folder:  
 * In the keys folder within the main folder, paste your open ai or google project id into: keys/oai_key.txt or keys/google_project_id.txt respectively  
-* python3 -m flask --app client.py run
-* python3 -m flask --app client.py run --port=5000 --host=0.0.0.0 - When running the application in an EC2 instance
+* python3 -m flask --app client.py run - To run the application on local host
+* python3 -m flask --app client.py run --port=5000 --host=0.0.0.0 - To run the application in an EC2 instance
 * Then open web-based tool at http://127.0.0.1:5000
 * --port=5000 - Implies the port address which the Flask development server will listen to incoming requests on EC2 instance
 * --host=0.0.0.0 - Implies the address which the Flask development server will listen to incoming requests on the host
