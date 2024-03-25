@@ -33,7 +33,7 @@ import json
 #load_dotenv()
 
 # Fetch the API key from environment variables
-api_key = os.environ["OPEN_AI_SECRET_KEY"]
+api_key = os.environ["API_KEY"]
 #api_key = os.getenv("OPENAI_SECRET_KEY")
 
 # Initializes a Flask web application
