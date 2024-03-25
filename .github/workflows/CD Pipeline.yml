@@ -20,4 +20,4 @@ jobs:
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_SECRET_KEY }}
     - name: Run a new container
-      run: sudo docker run -d -p 5000:5050 --name nl2ltl_container rkundula/nl2ltl:latest
+      run: sudo docker run -d -p 5000:5050 -e OPENAI_API_KEY --name nl2ltl_container rkundula/nl2ltl:latest
