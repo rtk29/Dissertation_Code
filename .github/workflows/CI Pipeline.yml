@@ -15,6 +15,7 @@ jobs:
     - name: Login to Docker Hub
       env: 
         DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
+        API_KEY: ${{ secrets.OPENAI_SECRET_KEY }}        
       run: docker login -u rkundula -p $DOCKER_PASS
     - name: Build a docker image
       run: docker build -t nl2ltl .
