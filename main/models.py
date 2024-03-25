@@ -32,14 +32,14 @@ from vertexai.preview.language_models import TextGenerationModel
 
 import prompting
 
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 
 # # Load the environment variable from .env file
-#load_dotenv()
+load_dotenv()
 
 # Fetch the API key from environment variables
-api_key = os.environ["OPENAI_SECRET_KEY"]
-#api_key = os.getenv("OPENAI_SECRET_KEY")
+#api_key = os.environ["OPENAI_SECRET_KEY"]
+api_key = os.getenv("OPENAI_SECRET_KEY")
 
 
 def gpt_35_turbo(args):
