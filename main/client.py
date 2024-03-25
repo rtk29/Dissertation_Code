@@ -34,7 +34,7 @@ load_dotenv()
 
 # Fetch the API key from environment variables
 #api_key = os.environ["OPENAI_SECRET_KEY"]
-api_key = os.getenv("OPENAI_SECRET_KEY")
+api_key = os.environ.get("OPENAI_SECRET_KEY")
 
 # Initializes a Flask web application
 app = Flask(__name__, template_folder="../templates", static_folder="../static")
@@ -162,4 +162,8 @@ def subtranslation_gen(form_data):
 
 
 
-print(f"The Open API key stored in Github is {api_key}")
+#print(f"The Open API key stored in Github is {api_key}")
+if api_key is None:
+    print("Open AI API key not found in environment variables")
+else:
+    print("Open AI API Key is:", api_key)
