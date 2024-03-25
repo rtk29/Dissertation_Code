@@ -38,8 +38,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Fetch the API key from environment variables
-api_key = os.environ['OPENAI_API_KEY']
+#api_key = os.environ['OPENAI_API_KEY']
 #api_key = os.environ.get('OPENAI_API_KEY')
+api_key = os.getenv('OPENAI_API_KEY')
 
 
 def gpt_35_turbo(args):
