@@ -34,7 +34,7 @@ load_dotenv()
 
 # Fetch the API key from environment variables
 #api_key = os.environ["OPENAI_SECRET_KEY"]
-api_key = os.environ.get("OPENAI_SECRET_KEY")
+api_key = os.environ.get("OPENAI_API_KEY")
 
 # Initializes a Flask web application
 app = Flask(__name__, template_folder="../templates", static_folder="../static")
